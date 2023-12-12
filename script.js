@@ -1,15 +1,17 @@
 // Default color
 let color = "black";
+let click = true;
+
+let board = document.querySelector(".board");
+let squares = board.querySelectorAll("div");
+let mode = document.querySelector(".mode");
 
 function populateBoard(size) {
-  let board = document.querySelector(".board");
-  let squares = board.querySelectorAll("div");
   squares.forEach((div) => div.remove());
   board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-  let amount = size * size;
-  for (let i = 0; i < amount; i++) {
+  for (let i = 0; i < size * size; i++) {
     let square = document.createElement("div");
     square.addEventListener("mouseover", colorSquare);
     square.addEventListener("mousedown", colorSquare);
@@ -29,10 +31,12 @@ function changeSize(input) {
 }
 
 function colorSquare() {
-  if (color === "random") {
-    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%`;
-  } else {
-    this.style.backgroundColor = color;
+  if (click) {
+    if (color === "random") {
+      this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%`;
+    } else {
+      this.style.backgroundColor = color;
+    }
   }
 }
 
@@ -45,3 +49,13 @@ function resetBoard() {
   let squares = board.querySelectorAll("div");
   squares.forEach((div) => (div.style.backgroundColor = "white"));
 }
+
+board.addEventListener("click", () => {
+  // Toggle between coloring and not coloring modes.
+  click = !click;
+  if (!click) {
+    mode.textContent = "Mode: Free-Cursor";
+  } else {
+    mode.textContent = "Mode: Coloring";
+  }
+});
