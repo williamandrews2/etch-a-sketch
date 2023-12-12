@@ -3,7 +3,7 @@
 }
 
 body {
-  background: linear-gradient(to top, #e66465, #9198e5);
+  background: linear-gradient(to bottom, #f24545, rgb(105, 3, 215));
   height: 100vh;
   width: 100vw;
 }
@@ -20,6 +20,7 @@ body {
   font-size: 72px;
   padding: 30px 0px;
   font-family: Sriracha;
+  color: #2ff3e0;
 }
 
 .mode {
@@ -28,6 +29,7 @@ body {
   font-size: 25px;
   font-family: Sriracha;
   font-weight: bold;
+  color: #2ff3e0;
 }
 
 .content {
@@ -38,4 +40,57 @@ body {
 
 .button {
   padding: 20px 0px;
+}
+
+.button button {
+  margin: 0px 15px;
+  border-style: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+#blackbtn {
+  color: white;
+  background-color: black;
+}
+
+#whitebtn {
+  color: white;
+  background-color: #fa26a0;
+}
+
+#randombtn {
+  background: linear-gradient(
+    90deg,
+    rgb(0, 102, 255) 0%,
+    green 25%,
+    #ffcf00 49%,
+    #fc4f4f 80%,
+    #aa00ff 100%
+  );
+  color: white;
+}
+
+#resetbtn {
+  color: white;
+  background-color: red;
+}
+
+#sizebtn {
+  margin: 0px 10px;
+  border-style: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+input {
+  height: 40px;
+  width: 60px;
+  font-size: 20px;
+  border-style: none;
+  border-radius: 15px;
+  text-align: center;
+  margin: 0;
 }
